@@ -11,7 +11,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MenuLateralComponent } from './Components/menu-lateral/menu-lateral.component';
-//import { ClienteComponent } from './Components/cliente/cliente.component';
 import { PersonaComponent } from './Components/persona/persona.component';
 import { FacturaComponent } from './Components/factura/factura.component';
 import { PedidoComponent } from './Components/pedido/pedido.component';
@@ -29,7 +28,6 @@ import { InventarioPlatilloComponent } from './Components/inventario-platillo/in
   declarations: [
     AppComponent,
     MenuLateralComponent,
-    //ClienteComponent,
     PersonaComponent,
     FacturaComponent,
     PedidoComponent,
