@@ -5,7 +5,7 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="/Home">Home</a>
+      <a mat-list-item href="/Home"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>Home</a>
       <a mat-list-item href="/Compras">Compras</a>
       <a mat-list-item href="/Egresos">Egresos</a>
       <a mat-list-item href="/Factura">Factura</a>
@@ -13,11 +13,11 @@
       <a mat-list-item href="/InventarioPlatillo">Inventario Platillo</a>
       <a mat-list-item href="/Pedido">Pedido</a>
       <a mat-list-item href="/Persona">Persona</a>
-      <a mat-list-item href="#">Platillo</a>
-      <a mat-list-item href="#">Platillo por Factura</a>
-      <a mat-list-item href="#">Producto</a>
-      <a mat-list-item href="#">Proveedor</a>
-      <a mat-list-item href="#">Usuario</a>
+      <a mat-list-item href="/Platillo">Platillo</a>
+      <a mat-list-item href="/platillo-xfactura">Platillo por Factura</a>
+      <a mat-list-item href="/Producto">Producto</a>
+      <a mat-list-item href="/Proveedor">Proveedor</a>
+      <a mat-list-item href="/Usuario">Usuario</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
