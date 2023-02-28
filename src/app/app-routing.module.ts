@@ -29,10 +29,10 @@ const routes: Routes = [
 {path:'Pedido',component: PedidoComponent},
 {path:'Persona',component: PersonaComponent},
 {path:'Platillo',component: PlatilloComponent},
-{path:'PlatilloPorFactura',component: PlatilloXFacturaComponent},
+{path:'platillo-xfactura',component: PlatilloXFacturaComponent},
 {path:'Producto',component: ProductoComponent},
 {path:'Proveedor',component: ProveedorComponent},
-{path:'Usuarios',component: UsuarioComponent},
+{path:'Usuario',component: UsuarioComponent},
 {path:'Formulario',component: FormularioComponent}
 
 ];
