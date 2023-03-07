@@ -33,6 +33,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BotonComponent } from './Components/boton/boton.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     PlatilloXFacturaComponent,
     InventarioPlatilloComponent,
     HomeComponent,
-    FormularioComponent
+    FormularioComponent,
+    BotonComponent
   ],
   imports: [
     BrowserModule,
