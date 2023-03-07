@@ -15,8 +15,6 @@ import { UsuarioComponent } from './Components/usuario/usuario.component';
 import { HomeComponent } from './Components/home/home.component';
 import { FormularioComponent } from './Components/formulario/formulario.component';
 
-
-
 // Rutas de navegacion
 const routes: Routes = [
 {path:'', redirectTo: '/Home', pathMatch: 'full' } ,
