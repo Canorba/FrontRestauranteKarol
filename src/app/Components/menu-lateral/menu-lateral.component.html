@@ -4,7 +4,7 @@
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
+    <mat-nav-list class="contenedor">
       <a mat-list-item href="/Home"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>Home</a>
       <a mat-list-item href="/Compras"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="shopping_cart_checkout"></mat-icon>Compras</a>
       <a mat-list-item href="/Egresos"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="move_down"></mat-icon>Egresos</a>
