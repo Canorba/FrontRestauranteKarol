@@ -22,8 +22,7 @@ import { PlatilloComponent } from './Components/platillo/platillo.component';
 import { UsuarioComponent } from './Components/usuario/usuario.component';
 import { PlatilloXFacturaComponent } from './Components/platillo-xfactura/platillo-xfactura.component';
 import { InventarioPlatilloComponent } from './Components/inventario-platillo/inventario-platillo.component';
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
+
 import { MatSortModule } from '@angular/material/sort';
 import { HomeComponent } from './Components/home/home.component';
 import { FormularioComponent } from './Components/formulario/formulario.component';
@@ -34,6 +33,10 @@ import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BotonComponent } from './Components/boton/boton.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import {MatTableModule} from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -65,15 +68,17 @@ import { AppRoutingModule } from './app-routing.module';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatTableModule,
-    MatPaginatorModule,
     MatSortModule,
     AppRoutingModule,
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatTableModule,
+    MatFormFieldModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
