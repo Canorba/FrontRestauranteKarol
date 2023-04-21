@@ -23,7 +23,7 @@ export class ComprasComponent  implements OnInit {
   ngOnInit(): void {
       this.Getcompra();
   }
-
+  
   public async Getcompra(){
      await this.Api.get("Compras").then((res)=>{
      
