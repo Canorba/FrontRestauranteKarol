@@ -20,12 +20,10 @@ import { ProductoComponent } from './Components/producto/producto.component';
 import { InventarioComponent } from './Components/inventario/inventario.component';
 import { PlatilloComponent } from './Components/platillo/platillo.component';
 import { UsuarioComponent } from './Components/usuario/usuario.component';
-import { PlatilloXFacturaComponent } from './Components/platillo-xfactura/platillo-xfactura.component';
-import { InventarioPlatilloComponent } from './Components/inventario-platillo/inventario-platillo.component';
+
 
 import { MatSortModule } from '@angular/material/sort';
 import { HomeComponent } from './Components/home/home.component';
-import { FormularioComponent } from './Components/formulario/formulario.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
@@ -53,12 +51,12 @@ import { TableTemplateComponent } from './Components/table-template/table-templa
     InventarioComponent,
     PlatilloComponent,
     UsuarioComponent,
-    PlatilloXFacturaComponent,
-    InventarioPlatilloComponent,
     HomeComponent,
     FormularioComponent,
     BotonComponent,
     TableTemplateComponent
+    BotonComponent
+
   ],
   imports: [
     BrowserModule,
