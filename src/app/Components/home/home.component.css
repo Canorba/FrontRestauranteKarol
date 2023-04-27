@@ -1,36 +1,91 @@
-body{
-	background: #212121;
+/* Estilos para el fondo */
+.body {
+	background-image: url('/src/assets/img/restaurante1.png');
+	background-size: cover;
+	background-position: center;
 }
-.container {
-	position: absolute;
-	top: 10%;
-	height: 90%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	right: 50%;
-}
-.item{
-	position: absolute;
-	background-color: transparent;
-	width: calc(var(--i)*2.5vmin);
-	aspect-ratio: 1;
-	border-radius: 50%;
-	border: .9vmin solid rgb(0,200, 255);
-	transform-style: preserve-3d;
-	transform: rotateX(70deg) translateZ(50px);
-	animation: my-move 4s ease-in-out calc(var(--i)* 0.08s) infinite;
-	box-shadow: 0px 0px 15px rgb(124, 124, 124),inset 0px 0px 15px rgb(124, 124, 124) ;
 
+/* Estilos para el carrusel */
+#slider {
+	width: 80%;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
 }
-@keyframes my-move{
-	0%,
-	100%{
-		transform: rotateX(70deg) translateZ(50px) translateY(0px);
-		filter: hue-rotate(0deg);
-	}
-	50%{
-		transform: rotateX(70deg) translateZ(50px) translateY(-50vmin);
-        filter: hue-rotate(180deg);
-	}
+
+#slider ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+#slider ul li {
+	position: relative;
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.slide-desc {
+	background-color: rgba(0,0,0,0.5);
+	color: #fff;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding: 10px;
+	width: 100%;
+}
+
+.slide-desc h3 {
+	margin-top: 0;
+}
+
+/* Estilos para los botones del carrusel */
+#slider .controles {
+	position: absolute;
+	top: 50%;
+	left: 10px;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	transform: translateY(-50%);
+}
+
+#slider .controles a {
+	color: #fff;
+	font-size: 24px;
+	margin-right: 10px;
+	text-decoration: none;
+}
+
+#slider .controles a:hover {
+	color: #ccc;
+}
+
+#slider .controles .anterior {
+	margin-right: 20px;
+}
+
+#slider .controles .siguiente {
+	margin-left: 20px;
+}
+
+/* Estilos para las animaciones del carrusel */
+#slider ul.animation {
+	animation: cambio 16s infinite;
+}
+
+@keyframes cambio {
+	0% { margin-left: 0; }
+	12.5% { margin-left: 0; }
+	25% { margin-left: -100%; }
+	37.5% { margin-left: -100%; }
+	50% { margin-left: -200%; }
+	62.5% { margin-left: -200%; }
+	75% { margin-left: -300%; }
+	87.5% { margin-left: -300%; }
+	100% { margin-left: -400%; }
 }
