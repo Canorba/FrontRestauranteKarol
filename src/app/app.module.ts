@@ -35,6 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { FormularioComponent } from './formulario/formulario.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     PlatilloComponent,
     UsuarioComponent,
     HomeComponent,
-    BotonComponent
+    BotonComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,
