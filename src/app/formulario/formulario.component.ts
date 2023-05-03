@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-formulario',
@@ -88,6 +89,10 @@ export class FormularioComponent {
   constructor(private fb: FormBuilder) {}
 
   onSubmit(): void {
-    alert('Thanks!');
+    Swal.fire(
+      'Good job!',
+      'You clicked the button!',
+      'success'
+    )
   }
 }
