@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -20,8 +19,6 @@ import { ProductoComponent } from './Components/producto/producto.component';
 import { InventarioComponent } from './Components/inventario/inventario.component';
 import { PlatilloComponent } from './Components/platillo/platillo.component';
 import { UsuarioComponent } from './Components/usuario/usuario.component';
-
-
 import { MatSortModule } from '@angular/material/sort';
 import { HomeComponent } from './Components/home/home.component';
 import { MatInputModule } from '@angular/material/input';
@@ -35,7 +32,9 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { TableTemplateComponent } from './Components/table-template/table-template.component';
+import { FormularioComponent } from './formulario/formulario.component';
+import { TableTemplateComponent } from './Components/TableTemplate/table-template.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -52,10 +51,10 @@ import { TableTemplateComponent } from './Components/table-template/table-templa
     PlatilloComponent,
     UsuarioComponent,
     HomeComponent,
-    FormularioComponent,
+    TableTemplateComponent,
     BotonComponent,
-    TableTemplateComponent
-    BotonComponent
+    FormularioComponent,
+   
 
   ],
   imports: [
@@ -79,6 +78,8 @@ import { TableTemplateComponent } from './Components/table-template/table-templa
     MatTableModule,
     MatFormFieldModule,
     MatPaginatorModule,
+    MatDialogModule
+ 
   ],
   providers: [],
   bootstrap: [AppComponent]

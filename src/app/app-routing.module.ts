@@ -1,3 +1,5 @@
+import { TableTemplateComponent } from './Components/TableTemplate/table-template.component';
+import { FormularioComponent } from './formulario/formulario.component';
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ComprasComponent } from './Components/compras/compras.component';
@@ -11,6 +13,8 @@ import { ProductoComponent } from './Components/producto/producto.component';
 import { ProveedorComponent } from './Components/proveedor/proveedor.component';
 import { UsuarioComponent } from './Components/usuario/usuario.component';
 import { HomeComponent } from './Components/home/home.component';
+
+
 
 // Rutas de navegacion
 const routes: Routes = [
@@ -26,6 +30,8 @@ const routes: Routes = [
 {path:'Producto',component: ProductoComponent},
 {path:'Proveedor',component: ProveedorComponent},
 {path:'Usuario',component: UsuarioComponent},
+{path:'Formulario',component:FormularioComponent },
+{path:'TableTemplateComponent',component:TableTemplateComponent }
 
 
 ];
