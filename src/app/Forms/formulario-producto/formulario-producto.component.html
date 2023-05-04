@@ -1,0 +1,52 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title class="words">Agregar Producto</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Ingrese la fecha</mat-label>
+            <input matInput [matDatepicker]="picker" placeholder="Fecha de Fabricacion" formControlName="fechaFabricacion">
+            <mat-error *ngIf="addressForm.controls['fechaFabricacion']"><strong></strong>
+            </mat-error>
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>       
+          </mat-form-field>
+        </div>
+        <div class="col">
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Ingrese la fecha</mat-label>
+          <input matInput [matDatepicker]="picker" placeholder="Fecha de Vencimiento" formControlName="fechaVencimiento">
+          <mat-error *ngIf="addressForm.controls['fechaVencimiento']"><strong></strong>
+          </mat-error>
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>       
+        </mat-form-field>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nombre del Prodcuto" formControlName="nombreProducto">
+            <mat-error *ngIf="addressForm.controls['nombreProducto'].hasError('required')"><strong>Campo Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Categoria" formControlName="categoria">
+            <mat-error *ngIf="addressForm.controls['categoria'].hasError('required')"><strong>Campo Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

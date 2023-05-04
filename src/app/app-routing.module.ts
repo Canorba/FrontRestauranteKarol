@@ -1,5 +1,3 @@
-import { TableTemplateComponent } from './Components/TableTemplate/table-template.component';
-import { FormularioComponent } from './formulario/formulario.component';
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ComprasComponent } from './Components/compras/compras.component';
@@ -29,9 +27,7 @@ const routes: Routes = [
 {path:'Platillo',component: PlatilloComponent},
 {path:'Producto',component: ProductoComponent},
 {path:'Proveedor',component: ProveedorComponent},
-{path:'Usuario',component: UsuarioComponent},
-{path:'Formulario',component:FormularioComponent },
-{path:'TableTemplateComponent',component:TableTemplateComponent }
+{path:'Usuario',component: UsuarioComponent}
 
 
 ];

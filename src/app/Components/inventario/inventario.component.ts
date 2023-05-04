@@ -3,7 +3,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/Services/api.service';
-import { FormularioComponent } from 'src/app/formulario/formulario.component';
+import { FormularioInventarioComponent } 
+        from 'src/app/Forms/formulario-inventario/formulario-inventario.component';
 import { TableService } from './../../Services/table.service';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -29,7 +30,7 @@ export class InventarioComponent implements OnInit {
   }
 
   openModal() {
-    const dialogRef = this.dialog.open(FormularioComponent);
+    const dialogRef = this.dialog.open(FormularioInventarioComponent);
 
   }
 

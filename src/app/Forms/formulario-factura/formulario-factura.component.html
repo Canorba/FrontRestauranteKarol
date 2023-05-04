@@ -1,0 +1,66 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title class="words">Agregar Factura</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="col">
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Ingrese la fecha</mat-label>
+          <input matInput [matDatepicker]="picker" placeholder="Fecha de Factura" formControlName="fechaFactura">
+          <mat-error *ngIf="addressForm.controls['fechaFactura'].hasError('required')"><strong>Campo Obligatorio</strong>
+          </mat-error>
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>       
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Cantidad" formControlName="cantidad">
+            <mat-error *ngIf="addressForm.controls['cantidad'].hasError('required')"><strong>Campo Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Valor" formControlName="valor">
+            <mat-error *ngIf="addressForm.controls['valor'].hasError('required')"><strong>Campo Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Total" formControlName="total">
+            <mat-error *ngIf="addressForm.controls['total'].hasError('required')"><strong>Campo Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Estado de la Factura" formControlName="estadoFactura">
+            <mat-error *ngIf="addressForm.controls['estadoFactura'].hasError('required')"><strong>Campo Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="idPedido" formControlName="idPedido">
+            <mat-error *ngIf="addressForm.controls['idPedido'].hasError('required')"><strong>Campo Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

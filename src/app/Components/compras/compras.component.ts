@@ -3,7 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/Services/api.service';
-import { FormularioComponent } from 'src/app/formulario/formulario.component';
+import { FormularioComprasComponent } from 'src/app/Forms/formulario-compras/formulario-compras.component';
 import { TableService } from './../../Services/table.service';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -29,7 +29,7 @@ export class ComprasComponent  implements OnInit {
   }
 
   openModal() {
-    const dialogRef = this.dialog.open(FormularioComponent);
+    const dialogRef = this.dialog.open(FormularioComprasComponent);
 
   }
 

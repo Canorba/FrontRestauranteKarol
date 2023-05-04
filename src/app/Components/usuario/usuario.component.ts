@@ -5,7 +5,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/Services/api.service';
-import { FormularioComponent } from 'src/app/formulario/formulario.component';
+import { FormularioUsuarioComponent } from 'src/app/Forms/formulario-usuario/formulario-usuario.component';
 
 @Component({
   selector: 'app-usuario',
@@ -29,7 +29,7 @@ export class UsuarioComponent implements OnInit {
   }
 
   openModal() {
-    const dialogRef = this.dialog.open(FormularioComponent);
+    const dialogRef = this.dialog.open(FormularioUsuarioComponent);
 
   }
 
