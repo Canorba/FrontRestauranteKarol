@@ -25,3 +25,7 @@
 .col:last-child {
   margin-right: 0;
 }
+.words{
+  color: rgb(143, 168, 168);
+  font-family: "Sanvito";
+}

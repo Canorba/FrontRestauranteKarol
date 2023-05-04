@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import {MatNativeDateModule } from '@angular/material/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -32,9 +33,19 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { FormularioComponent } from './formulario/formulario.component';
 import { TableTemplateComponent } from './Components/TableTemplate/table-template.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { FormularioComprasComponent } from './Forms/formulario-compras/formulario-compras.component';
+import { FormularioEgresosComponent } from './Forms/formulario-egresos/formulario-egresos.component';
+import { FormularioFacturaComponent } from './Forms/formulario-factura/formulario-factura.component';
+import { FormularioInventarioComponent } from './Forms/formulario-inventario/formulario-inventario.component';
+import { FormularioPedidoComponent } from './Forms/formulario-pedido/formulario-pedido.component';
+import { FormularioPersonaComponent } from './Forms/formulario-persona/formulario-persona.component';
+import { FormularioPlatilloComponent } from './Forms/formulario-platillo/formulario-platillo.component';
+import { FormularioProductoComponent } from './Forms/formulario-producto/formulario-producto.component';
+import { FormularioProveedorComponent } from './Forms/formulario-proveedor/formulario-proveedor.component';
+import { FormularioUsuarioComponent } from './Forms/formulario-usuario/formulario-usuario.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -53,7 +64,16 @@ import {MatDialogModule} from '@angular/material/dialog';
     HomeComponent,
     TableTemplateComponent,
     BotonComponent,
-    FormularioComponent,
+    FormularioComprasComponent,
+    FormularioEgresosComponent,
+    FormularioFacturaComponent,
+    FormularioInventarioComponent,
+    FormularioPedidoComponent,
+    FormularioPersonaComponent,
+    FormularioPlatilloComponent,
+    FormularioProductoComponent,
+    FormularioProveedorComponent,
+    FormularioUsuarioComponent,
    
 
   ],
@@ -78,9 +98,11 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatTableModule,
     MatFormFieldModule,
     MatPaginatorModule,
-    MatDialogModule
- 
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatDialogModule 
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

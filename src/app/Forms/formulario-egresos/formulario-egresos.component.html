@@ -1,0 +1,48 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title class="words">Agregar Egreso</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Tipo de Egreso" formControlName="tipoEgreso">
+            <mat-error *ngIf="addressForm.controls['tipoEgreso'].hasError('required')"><strong>Campo Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Ingrese la fecha</mat-label>
+            <input matInput [matDatepicker]="picker" placeholder="Fecha de Pago" formControlName="fechaPago">
+            <mat-error *ngIf="addressForm.controls['fechaPago'].hasError('required')"><strong>Campo Obligatorio</strong>
+            </mat-error>
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>       
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <textarea matInput placeholder="Descripcion del Egreso" formControlName="descripcionEgreso"></textarea>
+            <mat-error *ngIf="addressForm.controls['descripcionEgreso'].hasError('required')"><strong>Campo Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="idProveedor" formControlName="idProveedor">
+          <mat-error *ngIf="addressForm.controls['idProveedor'].hasError('required')"><strong>Campo Requerido</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
