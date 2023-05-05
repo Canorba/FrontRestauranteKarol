@@ -1,91 +1,23 @@
-/* Estilos para el fondo */
-.body {
-	background-image: url('/src/assets/img/restaurante1.png');
+.example-card {
+	width: 100%;
+	
+  }
+  
+  .example-header-image {
+	background-image: url('https://avatars.githubusercontent.com/u/92450281?s=400&u=e8e6f3214325e2d2f230bc0cc4382af9c0deed15&v=4');
 	background-size: cover;
-	background-position: center;
-}
+  }
+  
+  .example-header-images {
+	background: 10px;
+    margin-right: auto;
 
-/* Estilos para el carrusel */
-#slider {
-	width: 80%;
-	margin: 0 auto;
-	position: relative;
-	overflow: hidden;
+  }
+  .circulo{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+    top: -7px;
 }
-
-#slider ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	position: relative;
-}
-
-#slider ul li {
-	position: relative;
-	display: block;
-	float: left;
-	margin: 0;
-	padding: 0;
-	width: 100%;
-}
-
-.slide-desc {
-	background-color: rgba(0,0,0,0.5);
-	color: #fff;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	padding: 10px;
-	width: 100%;
-}
-
-.slide-desc h3 {
-	margin-top: 0;
-}
-
-/* Estilos para los botones del carrusel */
-#slider .controles {
-	position: absolute;
-	top: 50%;
-	left: 10px;
-	z-index: 100;
-	display: flex;
-	align-items: center;
-	transform: translateY(-50%);
-}
-
-#slider .controles a {
-	color: #fff;
-	font-size: 24px;
-	margin-right: 10px;
-	text-decoration: none;
-}
-
-#slider .controles a:hover {
-	color: #ccc;
-}
-
-#slider .controles .anterior {
-	margin-right: 20px;
-}
-
-#slider .controles .siguiente {
-	margin-left: 20px;
-}
-
-/* Estilos para las animaciones del carrusel */
-#slider ul.animation {
-	animation: cambio 16s infinite;
-}
-
-@keyframes cambio {
-	0% { margin-left: 0; }
-	12.5% { margin-left: 0; }
-	25% { margin-left: -100%; }
-	37.5% { margin-left: -100%; }
-	50% { margin-left: -200%; }
-	62.5% { margin-left: -200%; }
-	75% { margin-left: -300%; }
-	87.5% { margin-left: -300%; }
-	100% { margin-left: -400%; }
-}
+  
