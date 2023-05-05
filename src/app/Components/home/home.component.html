@@ -2,69 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Restaurante Ejemplo</title>
+  <title>Proyecto</title>
   <link rel="stylesheet" href="home.component.css">
 </head>
 <body>
-  <header>
-    <h1>Restaurante Ejemplo</h1>
-    <nav>
-      <ul>
-        <li><a href="#menu">Menú</a></li>
-        <li><a href="#reservas">Reservas</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+ <div class="container">
+  
+  <mat-card class="example-card">
 
- 
-  <main>
-    <section id="presentacion">
-      <h2>Bienvenidos a nuestro restaurante</h2>
-      <p>Ofrecemos una amplia variedad de platillos preparados con los ingredientes más frescos y de la más alta calidad. Nuestro menú incluye opciones para todos los gustos y preferencias alimentarias.</p>
-      <a href="#menu">Ver nuestro menú</a>
-    </section>
-    <section id="menu">
-      <h2>Nuestro menú</h2>
-      <p>Aquí puedes encontrar algunos de nuestros platillos más populares:</p>
-      <ul>
-        <li>Ensalada de espinacas y fresas</li>
-        <li>Pizza de pepperoni</li>
-        <li>Pasta Alfredo</li>
-        <li>Pollo a la parrilla</li>
-        <li>Salmón con salsa de miel y mostaza</li>
-        <li>Tarta de manzana</li>
-      </ul>
-      <a href="#reservas">Reservar una mesa</a>
-    </section>
-    <section id="reservas">
-      <h2>Reservas</h2>
-      <p>Para hacer una reserva en nuestro restaurante, por favor llámanos al 555-1234 o utiliza nuestro formulario en línea:</p>
-      <form action="/reservas" method="post">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre">
-        <label for="correo">Correo electrónico:</label>
-        <input type="email" id="correo" name="correo">
-        <label for="fecha">Fecha:</label>
-        <input type="date" id="fecha" name="fecha">
-        <label for="hora">Hora:</label>
-        <input type="time" id="hora" name="hora">
-        <input type="submit" value="Enviar">
-      </form>
-    </section>
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <p>Si tienes alguna pregunta o comentario, por favor contáctanos:</p>
-      <ul>
-        <li>Teléfono: 555-1234</li>
-        <li>Correo electrónico: info@restaurante-ejemplo.com</li>
-        <li>Dirección: Calle 123, Ciudad Ejemplo</li>
-      </ul>
-    </section>
-  </main>
-  <footer>
-    <p>Restaurante Ejemplo &copy; 2023</p>
-  </footer>
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>DAVIDMIRANDAD</mat-card-title>
+      <a href="https://github.com/settings/profile">
+      <img class="circulo"  src="https://img.icons8.com/color-glass/100/null/github--v1.png" alt="Photo of a Shiba Inu">
+    </a>
+      <div mat-card-avatar class="example-header-images"></div>
+      <mat-card-subtitle href="https://github.com/settings/profile">github</mat-card-subtitle>
+    </mat-card-header>
+
+
+    <img mat-card-image class="img" src="https://lustermagazine.com/wp-content/uploads/2016/06/Beach-House-C-Grill..jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+        Entregable corte dos
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+
+
+ </div>
 </body>
 </html>
-
