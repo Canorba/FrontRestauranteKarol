@@ -38,13 +38,13 @@ export class PersonaComponent implements OnInit {
 
 
   public async Getpersona(){
-    this.TableService.titleTabla="Personas";
+  this.TableService.titleTabla="Personas";
   this.TableService.controlador = "Personas";
 
      await this.Api.get("Personas").then((res)=>{
      
       this.displayedColumns=Object.keys(res[0])
-        // this.loadTable([res[0]])
+       
         this.dataSource.data=res
         this.TableService.dataSource=res;
     });
@@ -52,11 +52,7 @@ export class PersonaComponent implements OnInit {
     this.dataSource.sort=this.sort
   }
 
-  // loadTable(data:any[]){
-  //   for(let column in data[0]){
-  //     this.displayedColumns.push(column)
-  //   }
-  // }
+
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

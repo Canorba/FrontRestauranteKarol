@@ -13,7 +13,7 @@ export class FormularioPersonaComponent {
     nombre: [null, Validators.required],
     apellido: [null, Validators.required],
     telefono: [null, Validators.maxLength(12)],
-    correo: [null, Validators.email],
+    correo: [null, Validators.required, Validators.email],
     direccion: [null, Validators.required]
   });
 
@@ -24,7 +24,8 @@ export class FormularioPersonaComponent {
   onSubmit(): void {
     Swal.fire(
       'Buen trabajo!',
-      'Se agrego correctamente!'
+      'Cambios Guardado!',
+      'success'
     )
   }
 }

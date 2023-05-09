@@ -43,18 +43,13 @@ export class PlatilloComponent implements OnInit {
        await this.Api.get("Platilloes").then((res)=>{
        
         this.displayedColumns=Object.keys(res[0])
-          // this.loadTable([res[0]])
+     
           this.dataSource.data=res
           this.TableService.dataSource=res;
       });
       this.dataSource.paginator=this.paginator;
       this.dataSource.sort=this.sort
     }
-  // loadTable(data:any[]){
-  //   for(let column in data[0]){
-  //     this.displayedColumns.push(column)
-  //   }
-  // }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

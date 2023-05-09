@@ -47,12 +47,7 @@ export class ComprasComponent  implements OnInit {
       this.dataSource.sort=this.sort
     }
 
-  // loadTable(data:any[]){
-  //   for(let column in data[0]){
-  //     this.displayedColumns.push(column)
-  //   }
-  // }
-
+  
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
