@@ -22,7 +22,8 @@ export class FormularioProductoComponent {
   onSubmit(): void {
     Swal.fire(
       'Buen trabajo!',
-      'Se agrego correctamente!'
+      'Cambios Guardado!',
+      'success'
     )
   }
 }
