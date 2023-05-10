@@ -11,6 +11,7 @@ import { ProductoComponent } from './Components/producto/producto.component';
 import { ProveedorComponent } from './Components/proveedor/proveedor.component';
 import { UsuarioComponent } from './Components/usuario/usuario.component';
 import { HomeComponent } from './Components/home/home.component';
+import { LoginComponent } from './Components/login/login.component';
 
 
 
@@ -27,7 +28,8 @@ const routes: Routes = [
 {path:'Platillo',component: PlatilloComponent},
 {path:'Producto',component: ProductoComponent},
 {path:'Proveedor',component: ProveedorComponent},
-{path:'Usuario',component: UsuarioComponent}
+{path:'Usuario',component: UsuarioComponent},
+{path:'Login',component: LoginComponent}
 
 
 ];
