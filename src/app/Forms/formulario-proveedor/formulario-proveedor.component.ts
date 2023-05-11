@@ -10,10 +10,10 @@ import Swal from 'sweetalert2';
 export class FormularioProveedorComponent {
   addressForm = this.fb.group({
     nombreProveedor: [null, Validators.required],
-    nit: [null, Validators.maxLength(14)],
+    nit: [null, Validators.required, Validators.maxLength(14)],
     correo: [null, Validators.email],
     direccion: [null, Validators.required],
-    telefono: [null, Validators.maxLength(12)],
+    telefono: [null, Validators.required, Validators.maxLength(12)],
     idProducto: [null, Validators.required]
   });
 
