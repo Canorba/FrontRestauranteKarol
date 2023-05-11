@@ -28,6 +28,7 @@ export class TableTemplateComponent implements OnInit {
   this.datosTabla();
   }
 
+ 
   public async datosTabla(){
    
     await this.Api.get(this.TableService.controlador).then((res)=>{

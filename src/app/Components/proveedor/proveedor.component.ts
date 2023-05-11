@@ -41,7 +41,7 @@ public async Getproveedor(){
      await this.Api.get("Proveedors").then((res)=>{
      
       this.displayedColumns=Object.keys(res[0])
-        // this.loadTable([res[0]])
+        
         this.dataSource.data=res
         this.TableService.dataSource=res;
     });

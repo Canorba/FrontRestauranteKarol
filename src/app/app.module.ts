@@ -46,6 +46,7 @@ import { FormularioProductoComponent } from './Forms/formulario-producto/formula
 import { FormularioProveedorComponent } from './Forms/formulario-proveedor/formulario-proveedor.component';
 import { FormularioUsuarioComponent } from './Forms/formulario-usuario/formulario-usuario.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { LoginComponent } from './Components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     FormularioProductoComponent,
     FormularioProveedorComponent,
     FormularioUsuarioComponent,
+    LoginComponent,
    
 
   ],
