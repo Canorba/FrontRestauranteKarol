@@ -9,11 +9,11 @@ import Swal from 'sweetalert2';
 })
 export class FormularioPersonaComponent {
   addressForm = this.fb.group({
-    numDocumento: [null, Validators.maxLength(12)],
+    numDocumento: [null, Validators.required, Validators.maxLength(12)],
     nombre: [null, Validators.required],
     apellido: [null, Validators.required],
     telefono: [null, Validators.maxLength(12)],
-    correo: [null, Validators.required, Validators.email],
+    correo: [null, Validators.email],
     direccion: [null, Validators.required]
   });
 
