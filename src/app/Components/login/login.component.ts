@@ -22,7 +22,7 @@ export class LoginComponent {
 
         this.user = this.loginForm.controls["username"].value;
         this.pass = this.loginForm.controls["password"].value;
-            if(this.user==="usuario" && this.pass==="1234"){
+            if(this.user === "usuario" && this.pass === "1234"){
               Swal.fire(
                 'Muy bien',
                 'Se ha logueado Correctamente',
