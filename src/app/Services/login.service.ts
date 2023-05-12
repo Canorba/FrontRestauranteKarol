@@ -8,10 +8,9 @@ export class LoginService implements OnInit{
 
     constructor() {}
 
-    Login = new BehaviorSubject (localStorage.getItem('login')|| "" );
+    login = new BehaviorSubject(localStorage.getItem('login') || "" );
+    
     ngOnInit(): void {
-        this.Login.next(localStorage.getItem('login') || "");
+        this.login.next(localStorage.getItem('login') || "");
     }
-
-
 }
