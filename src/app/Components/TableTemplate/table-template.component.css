@@ -10,3 +10,17 @@ table {
   td, th {
     width: 25%;
   }
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 100px;
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .col {
+    flex: 1;
+    margin-right:-30px;
+  }

@@ -16,6 +16,7 @@ export class TableTemplateComponent implements OnInit {
   @Input() titulo:string
   column:Object;
   displayedColumns: string[]=[]
+  acciones: any = "Acciones"
   dataSource!: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -35,6 +36,7 @@ export class TableTemplateComponent implements OnInit {
       this.displayedColumns=Object.keys(res[0])
       this.dataSource.data=res
       this.TableService.dataSource=res
+      this.displayedColumns.push(this.acciones) 
     });
     this.dataSource.paginator=this.paginator;
     this.dataSource.sort=this.sort
@@ -47,6 +49,14 @@ export class TableTemplateComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  delete(){
+
+  }
+
+  edit(){
+    
   }
 }
 
