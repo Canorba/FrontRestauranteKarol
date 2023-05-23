@@ -75,7 +75,7 @@ import { LoginComponent } from './Components/login/login.component';
     FormularioProductoComponent,
     FormularioProveedorComponent,
     FormularioUsuarioComponent,
-    LoginComponent,
+    LoginComponent
    
 
   ],
