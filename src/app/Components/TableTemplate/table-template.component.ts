@@ -5,6 +5,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Title } from '@angular/platform-browser';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -13,6 +14,7 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./table-template.component.css']
 })
 export class TableTemplateComponent implements OnInit {
+  @Input() component:string
   @Input() titulo:string
   column:Object;
   displayedColumns: string[]=[]
@@ -51,8 +53,71 @@ export class TableTemplateComponent implements OnInit {
     }
   }
 
-  delete(){
+  delete(id: any){
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+      },
+      buttonsStyling: false
+    })
+    
+    swalWithBootstrapButtons.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, cancel!',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
 
+        switch (this.component) {
+          case "compras":
+            this.Api.delete("compras",id)
+            break;
+          case "egresos":
+            this.Api.delete("egresos",id)
+            break;
+          case "factura":
+            this.Api.delete("factura",id)
+            break;
+          case "inventario":
+            this.Api.delete("inventario",id)
+            break;
+          case "pedido":
+            this.Api.delete("pedido",id)
+            break;
+          case "persona":
+            this.Api.delete("PersonaComponent",id)
+            break;
+          case "platillo":
+            this.Api.delete("platillo",id)
+            break;
+          case "producto":
+            this.Api.delete("producto",id)
+            break;
+          case "proveedor":
+            this.Api.delete("proveedor",id)
+            break; 
+        }       
+        swalWithBootstrapButtons.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          'Cancelled',
+          'Your imaginary file is safe :)',
+          'error'
+        )
+      }
+    })
   }
 
   edit(){
