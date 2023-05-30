@@ -6,6 +6,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Title } from '@angular/platform-browser';
+import Swal from 'sweetalert2';
 import { FormularioComprasComponent } from 'src/app/Forms/formulario-compras/formulario-compras.component';
 import { MatDialog } from '@angular/material/dialog';
 import { FormsService } from 'src/app/Services/forms.service';
@@ -20,12 +21,14 @@ import { FormularioProveedorComponent } from 'src/app/Forms/formulario-proveedor
 import { FormularioUsuarioComponent } from 'src/app/Forms/formulario-usuario/formulario-usuario.component';
 
 
+
 @Component({
   selector: 'app-table-template',
   templateUrl: './table-template.component.html',
   styleUrls: ['./table-template.component.css']
 })
 export class TableTemplateComponent implements OnInit {
+  @Input() component:string
   @Input() titulo:string
   @Input() Componenente: String;
   column:Object;
@@ -65,16 +68,71 @@ export class TableTemplateComponent implements OnInit {
     }
   }
 
-  delete(id: string) {
-    switch (this.Componenente) {
-      case "Compras":
-        this.forms.deleteFormulario(id);
-        this.forms.componente.next("Compras");
-        this.dialog.open(FormularioComprasComponent);
-        break;
-      default:
-        break;
-    }
+
+  delete(id: any){
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+      },
+      buttonsStyling: false
+    })
+    
+    swalWithBootstrapButtons.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, cancel!',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        switch (this.component) {
+          case "compras":
+            this.Api.delete("compras",id)
+            break;
+          case "egresos":
+            this.Api.delete("egresos",id)
+            break;
+          case "factura":
+            this.Api.delete("factura",id)
+            break;
+          case "inventario":
+            this.Api.delete("inventario",id)
+            break;
+          case "pedido":
+            this.Api.delete("pedido",id)
+            break;
+          case "persona":
+            this.Api.delete("Personas",id)
+            break;
+          case "platillo":
+            this.Api.delete("platillo",id)
+            break;
+          case "producto":
+            this.Api.delete("producto",id)
+            break;
+          case "proveedor":
+            this.Api.delete("proveedor",id)
+            break; 
+        } 
+        swalWithBootstrapButtons.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          'Cancelled',
+          'Your imaginary file is safe :)',
+          'error'
+        )
+      }
+    })
   }
   
 
