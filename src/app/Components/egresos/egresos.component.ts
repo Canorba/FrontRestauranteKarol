@@ -6,6 +6,7 @@ import { ApiService } from 'src/app/Services/api.service';
 import { FormularioEgresosComponent } from 'src/app/Forms/formulario-egresos/formulario-egresos.component';
 import { TableService } from './../../Services/table.service';
 import { MatDialog } from '@angular/material/dialog';
+import { FormsService } from 'src/app/Services/forms.service';
 
 
 @Component({
@@ -17,16 +18,16 @@ export class EgresosComponent implements OnInit {
   column:Object;
   displayedColumns: string[]=[]
   dataSource!: MatTableDataSource<any>;
- 
+  Componenente: String;
   titulo="Egresos";
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  constructor(public Api: ApiService,public TableService: TableService,public dialog: MatDialog){
+  constructor(public Api: ApiService,public TableService: TableService,public dialog: MatDialog,public forms: FormsService,){
     this.dataSource=new MatTableDataSource();
   }
 
   ngOnInit(): void {
-      this.Getegresos();
+      this.GetEgresoes();
   }
 
   openModal() {
@@ -34,7 +35,7 @@ export class EgresosComponent implements OnInit {
 
   }
   
-  public async Getegresos(){
+  public async GetEgresoes(){
     this.TableService.titleTabla="Egresoes";
     this.TableService.controlador = "Egresoes";
        await this.Api.get("Egresoes").then((res)=>{
@@ -45,13 +46,6 @@ export class EgresosComponent implements OnInit {
       this.dataSource.paginator=this.paginator;
       this.dataSource.sort=this.sort
     }
-      
-
-  // loadTable(data:any[]){
-  //   for(let column in data[0]){
-  //     this.displayedColumns.push(column)
-  //   }
-  // }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

@@ -7,6 +7,7 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
+            <mat-label>Tipo de Egreso</mat-label>
             <input matInput placeholder="Tipo de Egreso" formControlName="tipoEgreso">
             <mat-error *ngIf="addressForm.controls['tipoEgreso'].hasError('required')"><strong>Campo Requerido</strong>
             </mat-error>
@@ -27,14 +28,16 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
-            <textarea matInput placeholder="Descripcion del Egreso" formControlName="descripcionEgreso"></textarea>
-            <mat-error *ngIf="addressForm.controls['descripcionEgreso'].hasError('required')"><strong>Campo Requerido</strong>
+            <mat-label>Descripcion del Egreso</mat-label>
+            <textarea matInput placeholder="Descripcion del Egreso" formControlName="descripEgreso"></textarea>
+            <mat-error *ngIf="addressForm.controls['descripEgreso'].hasError('required')"><strong>Campo Requerido</strong>
             </mat-error>
           </mat-form-field>
         </div>
       </div>
       <div class="col">
         <mat-form-field class="full-width">
+          <mat-label>ID del Proveedor</mat-label>
           <input matInput placeholder="idProveedor" formControlName="idProveedor">
           <mat-error *ngIf="addressForm.controls['idProveedor'].hasError('required')"><strong>Campo Requerido</strong>
           </mat-error>

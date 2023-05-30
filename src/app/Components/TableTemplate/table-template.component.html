@@ -16,14 +16,16 @@
                 <div class="row">
                   <div class="col">
                     <div class="example-button-container">
+
                       <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="delete(row.id)">
+
                         <mat-icon>delete</mat-icon>
                       </button>
                   </div>
                   </div>
                   <div class="col">
                     <div class="example-button-container">
-                      <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="edit()">
+                      <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="edit(row)" class="edit">
                         <mat-icon>edit</mat-icon>
                       </button>
                      </div>

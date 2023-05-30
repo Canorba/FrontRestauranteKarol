@@ -6,6 +6,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/Services/api.service';
 import { FormularioUsuarioComponent } from 'src/app/Forms/formulario-usuario/formulario-usuario.component';
+import { FormsService } from 'src/app/Services/forms.service';
 
 @Component({
   selector: 'app-usuario',
@@ -16,11 +17,11 @@ export class UsuarioComponent implements OnInit {
   column:Object;
   displayedColumns: string[]=[]
   dataSource!: MatTableDataSource<any>;
-
+  Componenente: String;
   titulo="Usuarios"
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  constructor(public Api: ApiService, public TableService: TableService,public dialog: MatDialog){
+  constructor(public Api: ApiService, public TableService: TableService,public dialog: MatDialog,public forms: FormsService){
     this.dataSource=new MatTableDataSource();
   }
 

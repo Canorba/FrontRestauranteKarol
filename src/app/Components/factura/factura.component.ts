@@ -6,6 +6,7 @@ import { ApiService } from 'src/app/Services/api.service';
 import { FormularioFacturaComponent } from 'src/app/Forms/formulario-factura/formulario-factura.component';
 import { TableService } from './../../Services/table.service';
 import { MatDialog } from '@angular/material/dialog';
+import { FormsService } from 'src/app/Services/forms.service';
 
 
 @Component({
@@ -18,9 +19,10 @@ export class FacturaComponent implements OnInit {
   displayedColumns: string[]=[]
   dataSource!: MatTableDataSource<any>;
   titulo="Factura";
+  Componenente: String;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  constructor(public Api: ApiService,public TableService: TableService,public dialog: MatDialog){
+  constructor(public Api: ApiService,public TableService: TableService,public dialog: MatDialog,public forms: FormsService,){
     this.dataSource=new MatTableDataSource();
   }
 
