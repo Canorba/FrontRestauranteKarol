@@ -72,7 +72,6 @@ export class TableTemplateComponent implements OnInit {
       reverseButtons: true
     }).then((result) => {
       if (result.isConfirmed) {
-
         switch (this.component) {
           case "compras":
             this.Api.delete("compras",id)
@@ -90,7 +89,7 @@ export class TableTemplateComponent implements OnInit {
             this.Api.delete("pedido",id)
             break;
           case "persona":
-            this.Api.delete("PersonaComponent",id)
+            this.Api.delete("Personas",id)
             break;
           case "platillo":
             this.Api.delete("platillo",id)
@@ -101,7 +100,7 @@ export class TableTemplateComponent implements OnInit {
           case "proveedor":
             this.Api.delete("proveedor",id)
             break; 
-        }       
+        } 
         swalWithBootstrapButtons.fire(
           'Deleted!',
           'Your file has been deleted.',
