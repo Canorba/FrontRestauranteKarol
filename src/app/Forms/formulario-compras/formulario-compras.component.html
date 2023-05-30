@@ -31,6 +31,7 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
+            <mat-label>Tipo Compra</mat-label>
             <input matInput placeholder="Tipo de Compra" formControlName="tipoCompra">
             <mat-error *ngIf="addressForm.controls['tipoCompra'].hasError('required')"><strong>Campo Requerido</strong>
             </mat-error>
@@ -40,6 +41,7 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
+            <mat-label>Id Proveedor</mat-label>
             <input matInput placeholder="IdProveedor" formControlName="idProveedor">
             <mat-error *ngIf="addressForm.controls['idProveedor'].hasError('required')"><strong>Campo Requerido</strong>
             </mat-error>

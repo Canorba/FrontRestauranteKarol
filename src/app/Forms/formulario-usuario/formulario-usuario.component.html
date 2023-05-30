@@ -7,22 +7,33 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
-            <input matInput placeholder="Rol del Usuario" formControlName="rolUsuario">
-            <mat-error *ngIf="addressForm.controls['rolUsuario'].hasError('required')"><strong>Campo Requerido</strong>
+            <mat-label>Rol del Usuario </mat-label>
+            <input matInput placeholder="Rol del Usuario" formControlName="rolUsu">
+            <mat-error *ngIf="addressForm.controls['rolUsu'].hasError('required')"><strong>Campo Requerido</strong>
             </mat-error>
           </mat-form-field>
         </div>
         <div class="col">
           <mat-form-field class="full-width">
-            <input matInput placeholder="Nombre de Usuario" formControlName="nombreUsuario">
-            <mat-error *ngIf="addressForm.controls['nombreUsuario'].hasError('required')"><strong>Campo Requerido</strong>
+            <mat-label>Nombre de Usuario </mat-label>
+            <input matInput placeholder="Nombre de Usuario" formControlName="nomUsuario">
+            <mat-error *ngIf="addressForm.controls['nomUsuario'].hasError('required')"><strong>Campo Requerido</strong>
             </mat-error>
           </mat-form-field>
         </div>
         <div class="col">
           <mat-form-field class="full-width">
-            <input matInput placeholder="Contraseña" formControlName="contraseña">
-            <mat-error *ngIf="addressForm.controls['contraseña'].hasError('required')"><strong>Campo Requerido</strong>
+            <mat-label>Apellido del Usuario </mat-label>
+            <input matInput placeholder="Apellido" formControlName="apePersona">
+            <mat-error *ngIf="addressForm.controls['apePersona'].hasError('required')"><strong>Campo Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-label>Contraseña </mat-label>
+            <input matInput placeholder="Contraseña" formControlName="password">
+            <mat-error *ngIf="addressForm.controls['password'].hasError('required')"><strong>Campo Requerido</strong>
             </mat-error>
           </mat-form-field>
         </div>
@@ -30,15 +41,25 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
-            <input matInput placeholder="Estado del Usuario" formControlName="estado">
-            <mat-error *ngIf="addressForm.controls['estado'].hasError('required')"><strong>Campo Requerido</strong>
+            <mat-label>Estado del Usuario </mat-label>
+            <input matInput placeholder="Estado del Usuario" formControlName="estadoUsu">
+            <mat-error *ngIf="addressForm.controls['estadoUsu'].hasError('required')"><strong>Campo Requerido</strong>
             </mat-error>
           </mat-form-field>
         </div>
         <div class="col">
           <mat-form-field class="full-width">
-            <input matInput placeholder="IdPersona" formControlName="idPersona">
-            <mat-error *ngIf="addressForm.controls['idPersona'].hasError('required')"><strong>Campo Requerido</strong>
+            <mat-label>Telefono </mat-label>
+            <input matInput placeholder="Telefono" formControlName="telPersona">
+            <mat-error *ngIf="addressForm.controls['telPersona'].hasError('required')"><strong>Campo Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-label>Id</mat-label>
+            <input matInput placeholder="Id" formControlName="idUsuario">
+            <mat-error *ngIf="addressForm.controls['idUsuario'].hasError('required')"><strong>Campo Requerido</strong>
             </mat-error>
           </mat-form-field>
         </div>

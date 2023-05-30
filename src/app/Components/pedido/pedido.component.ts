@@ -6,6 +6,7 @@ import { ApiService } from 'src/app/Services/api.service';
 import { FormularioPedidoComponent } from 'src/app/Forms/formulario-pedido/formulario-pedido.component';
 import { TableService } from './../../Services/table.service';
 import { MatDialog } from '@angular/material/dialog';
+import { FormsService } from 'src/app/Services/forms.service';
 
 @Component({
   selector: 'app-pedido',
@@ -17,9 +18,10 @@ export class PedidoComponent implements OnInit {
   displayedColumns: string[]=[]
   dataSource!: MatTableDataSource<any>;
   titulo="Pedidos";
+  Componenente: String;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  constructor(public Api: ApiService,public TableService: TableService,public dialog: MatDialog){
+  constructor(public Api: ApiService,public TableService: TableService,public dialog: MatDialog,public forms: FormsService){
     this.dataSource=new MatTableDataSource();
   }
 

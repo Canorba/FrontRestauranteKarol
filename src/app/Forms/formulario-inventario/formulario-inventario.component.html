@@ -4,6 +4,34 @@
       <mat-card-title class="words">Agregar Inventario</mat-card-title>
     </mat-card-header>
     <mat-card-content>
+      
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-label>Nombre del producto</mat-label>
+            <input matInput placeholder="nombre del Producto" formControlName="nomProducto">
+            <mat-error *ngIf="addressForm.controls['nomProducto'].hasError('required')"><strong>Campo Obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-label>Surtidora</mat-label>
+            <input matInput placeholder="Categoria" formControlName="categoria">
+            <mat-error *ngIf="addressForm.controls['categoria'].hasError('required')"><strong>Campo Obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-label>Cantidad disponible</mat-label>
+            <input matInput placeholder="Cantidad disponible" formControlName="existencias">
+            <mat-error *ngIf="addressForm.controls['existencias'].hasError('required')"><strong>Campo Obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
       <div class="col">
         <mat-form-field class="full-width" appearance="fill">
           <mat-label>Ingrese la fecha</mat-label>
@@ -15,22 +43,7 @@
           <mat-datepicker #picker></mat-datepicker>       
         </mat-form-field>
       </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Cantidad" formControlName="cantidad">
-            <mat-error *ngIf="addressForm.controls['cantidad'].hasError('required')"><strong>Campo Obligatorio</strong>
-            </mat-error>
-          </mat-form-field>
-        </div>
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="idProducto" formControlName="idProducto">
-            <mat-error *ngIf="addressForm.controls['idProducto'].hasError('required')"><strong>Campo Obligatorio</strong>
-            </mat-error>
-          </mat-form-field>
-        </div>
-      </div>
+
     </mat-card-content>
     <mat-card-actions>
       <button mat-raised-button color="primary" type="submit">Submit</button>

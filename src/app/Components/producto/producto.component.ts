@@ -7,6 +7,7 @@ import { FormularioProductoComponent }
         from 'src/app/Forms/formulario-producto/formulario-producto.component';
 import { TableService } from './../../Services/table.service';
 import { MatDialog } from '@angular/material/dialog';
+import { FormsService } from 'src/app/Services/forms.service';
 
 @Component({
   selector: 'app-producto',
@@ -18,9 +19,10 @@ export class ProductoComponent implements OnInit {
   displayedColumns: string[]=[]
   dataSource!: MatTableDataSource<any>;
   titulo="Productos";
+  Componenente: String;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  constructor(public Api: ApiService,public TableService: TableService,public dialog: MatDialog){
+  constructor(public Api: ApiService,public TableService: TableService,public dialog: MatDialog,public forms: FormsService){
     this.dataSource=new MatTableDataSource();
   }
 

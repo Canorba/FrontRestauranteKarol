@@ -1,12 +1,13 @@
 table {
-    width: 100%;
+    width: 90%;
   }
   
   .mat-mdc-form-field {
     font-size: 14px;
-    width: 100%;
+    width: 90%;
   }
   
   td, th {
     width: 25%;
+    
   }

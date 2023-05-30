@@ -7,6 +7,7 @@ import { FormularioPlatilloComponent }
         from 'src/app/Forms/formulario-platillo/formulario-platillo.component';
 import { TableService } from './../../Services/table.service';
 import { MatDialog } from '@angular/material/dialog';
+import { FormsService } from 'src/app/Services/forms.service';
 
 @Component({
   selector: 'app-platillo',
@@ -17,11 +18,11 @@ export class PlatilloComponent implements OnInit {
   column:Object;
   displayedColumns: string[]=[]
   dataSource!: MatTableDataSource<any>;
-
+  Componenente: String;
   titulo="Platillos";
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  constructor(public Api: ApiService,public TableService: TableService,public dialog: MatDialog){
+  constructor(public Api: ApiService,public TableService: TableService,public dialog: MatDialog,public forms: FormsService){
     this.dataSource=new MatTableDataSource();
   }
 
