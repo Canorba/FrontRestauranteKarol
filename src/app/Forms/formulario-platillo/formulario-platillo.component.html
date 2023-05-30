@@ -1,19 +1,21 @@
 <form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
   <mat-card class="shipping-card">
     <mat-card-header>
-      <mat-card-title class="words">Shipping Information</mat-card-title>
+      <mat-card-title class="words">Platillos</mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
-            <input matInput placeholder="Nombre del Platillo" formControlName="nombrePlatillo">
-            <mat-error *ngIf="addressForm.controls['nombrePlatillo'].hasError('required')"><strong>Campo Requerido</strong>
+            <mat-label>Nombre del platillo</mat-label>
+            <input matInput placeholder="Nombre del Platillo" formControlName="nomPlatillo">
+            <mat-error *ngIf="addressForm.controls['nomPlatillo'].hasError('required')"><strong>Campo Requerido</strong>
             </mat-error>
           </mat-form-field>
         </div>
         <div class="col">
           <mat-form-field class="full-width">
+            <mat-label>Tipo platillo</mat-label>
             <input matInput placeholder="Tipo de Platillo" formControlName="tipoPlatillo">
             <mat-error *ngIf="addressForm.controls['tipoPlatillo'].hasError('required')"><strong>Campo Requerido</strong>
             </mat-error>
@@ -23,8 +25,9 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
-            <textarea matInput placeholder="Descripcion del Platillo" formControlName="descripcionPlatillo"></textarea>
-            <mat-error *ngIf="addressForm.controls['descripcionPlatillo'].hasError('required')"><strong>Campo Requerido</strong>
+            <mat-label>Descripcion del platillo</mat-label>
+            <textarea matInput placeholder="Descripcion del Platillo" formControlName="descripPlat"></textarea>
+            <mat-error *ngIf="addressForm.controls['descripPlat'].hasError('required')"><strong>Campo Requerido</strong>
             </mat-error>
           </mat-form-field>
         </div>

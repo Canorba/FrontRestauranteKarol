@@ -18,6 +18,7 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
+            <mat-label>Cantidad</mat-label>
             <input matInput placeholder="Cantidad" formControlName="cantidad">
             <mat-error *ngIf="addressForm.controls['cantidad'].hasError('required')"><strong>Campo Requerido</strong>
             </mat-error>
@@ -25,6 +26,7 @@
         </div>
         <div class="col">
           <mat-form-field class="full-width">
+            <mat-label>Valor</mat-label>
             <input matInput placeholder="Valor" formControlName="valor">
             <mat-error *ngIf="addressForm.controls['valor'].hasError('required')"><strong>Campo Requerido</strong>
             </mat-error>
@@ -34,6 +36,7 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
+            <mat-label>Total</mat-label>
             <input matInput placeholder="Total" formControlName="total">
             <mat-error *ngIf="addressForm.controls['total'].hasError('required')"><strong>Campo Requerido</strong>
             </mat-error>
@@ -43,6 +46,7 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
+            <mat-label>Estado de la factura</mat-label>
             <input matInput placeholder="Estado de la Factura" formControlName="estadoFactura">
             <mat-error *ngIf="addressForm.controls['estadoFactura'].hasError('required')"><strong>Campo Requerido</strong>
             </mat-error>
@@ -52,8 +56,9 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
-            <input matInput placeholder="idPedido" formControlName="idPedido">
-            <mat-error *ngIf="addressForm.controls['idPedido'].hasError('required')"><strong>Campo Requerido</strong>
+            <mat-label>Id del pedido</mat-label>
+            <input matInput placeholder="idFactura" formControlName="idFactura">
+            <mat-error *ngIf="addressForm.controls['idFactura'].hasError('required')"><strong>Campo Requerido</strong>
             </mat-error>
           </mat-form-field>
         </div>

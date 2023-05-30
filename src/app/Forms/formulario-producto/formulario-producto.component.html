@@ -31,14 +31,16 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
-            <input matInput placeholder="Nombre del Prodcuto" formControlName="nombreProducto">
-            <mat-error *ngIf="addressForm.controls['nombreProducto'].hasError('required')"><strong>Campo Requerido</strong>
+            <mat-label>Nombre del producto</mat-label>
+            <input matInput placeholder="Nombre del Prodcuto" formControlName="nomProducto">
+            <mat-error *ngIf="addressForm.controls['nomProducto'].hasError('required')"><strong>Campo Requerido</strong>
             </mat-error>
           </mat-form-field>
         </div>
         <div class="col">
           <mat-form-field class="full-width">
-            <input matInput placeholder="Categoria" formControlName="categoria">
+            <mat-label>Proveedor </mat-label>
+            <input matInput placeholder="Proveedor" formControlName="categoria">
             <mat-error *ngIf="addressForm.controls['categoria'].hasError('required')"><strong>Campo Requerido</strong>
             </mat-error>
           </mat-form-field>

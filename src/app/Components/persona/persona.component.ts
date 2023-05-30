@@ -6,6 +6,7 @@ import { ApiService } from 'src/app/Services/api.service';
 import { FormularioPersonaComponent } from 'src/app/Forms/formulario-persona/formulario-persona.component';
 import { TableService } from './../../Services/table.service';
 import { MatDialog } from '@angular/material/dialog';
+import { FormsService } from 'src/app/Services/forms.service';
 
 
 @Component({
@@ -18,11 +19,11 @@ export class PersonaComponent implements OnInit {
   displayedColumns: string[]=[]
   dataSource!: MatTableDataSource<any>; 
 
-
+  Componenente: String;
   titulo="Personas";
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  constructor(public Api: ApiService,public TableService: TableService,public dialog: MatDialog){
+  constructor(public Api: ApiService,public TableService: TableService,public dialog: MatDialog,public forms: FormsService){
     this.dataSource=new MatTableDataSource();
   }
 
@@ -35,7 +36,6 @@ export class PersonaComponent implements OnInit {
     const dialogRef = this.dialog.open(FormularioPersonaComponent);
 
   }
-
 
   public async Getpersona(){
   this.TableService.titleTabla="Personas";
