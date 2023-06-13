@@ -21,7 +21,7 @@ export class FacturaComponent implements OnInit {
   titulo="Factura";
   Componenente: String;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatSort) sort!: MatSort; 
   constructor(public Api: ApiService,public TableService: TableService,public dialog: MatDialog,public forms: FormsService,){
     this.dataSource=new MatTableDataSource();
   }
@@ -45,12 +45,6 @@ export class FacturaComponent implements OnInit {
       this.dataSource.paginator=this.paginator;
       this.dataSource.sort=this.sort
     }
-
-  // loadTable(data:any[]){
-  //   for(let column in data[0]){
-  //     this.displayedColumns.push(column)
-  //   }
-  // }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

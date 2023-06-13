@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
   providedIn: 'root'
@@ -45,13 +46,9 @@ export class ApiService {
     return response
   }
 
-  public async delete(controlador: string, id:any) {
-    var response: any
-    await this.http.delete(this.url + controlador+"/"+ id).subscribe(res => {
-      response = res
-    });
-    return response
-  }
+  delete(controlador: string, id: any): Observable<any> {
+    return this.http.delete(`${this.url}${controlador}/${id}`);
+  }
 
 }
 
