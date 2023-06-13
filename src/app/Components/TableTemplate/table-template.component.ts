@@ -77,6 +77,41 @@ export class TableTemplateComponent implements OnInit {
       .subscribe(
         () => {
           console.log('Registro eliminado exitosamente.');
+
+          const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+              confirmButton: 'btn btn-success',
+              cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+          })
+          
+          swalWithBootstrapButtons.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
+            reverseButtons: true
+          }).then((result) => {
+            if (result.isConfirmed) {
+              swalWithBootstrapButtons.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+              )
+            } else if (
+              /* Read more about handling dismissals below */
+              result.dismiss === Swal.DismissReason.cancel
+            ) {
+              swalWithBootstrapButtons.fire(
+                'Cancelled',
+                'Your imaginary file is safe :)',
+                'error'
+              )
+            }
+          })
           
         },
         error => {
@@ -90,60 +125,60 @@ export class TableTemplateComponent implements OnInit {
   edit(object:any){
 
  switch(this.Componenente){
-   case "Compras":
-    this.forms.object=object
-       this.forms.componente.next("Compras")
-      this.dialog.open( FormularioComprasComponent);
-    break;
-    
-   case "Egresoes":
-       this.forms.object=object
-          this.forms.componente.next("Egresoes")
-         this.dialog.open( FormularioEgresosComponent);
-         break;
-
-    case "Facturas":
+      case "Compras":
+        this.forms.object=object
+          this.forms.componente.next("Compras")
+          this.dialog.open( FormularioComprasComponent);
+        break;
+        
+      case "Egresoes":
           this.forms.object=object
-             this.forms.componente.next("Facturas")
-            this.dialog.open( FormularioFacturaComponent);
+              this.forms.componente.next("Egresoes")
+            this.dialog.open( FormularioEgresosComponent);
             break;
 
-    case "Inventarios":
+        case "Facturas":
               this.forms.object=object
-                 this.forms.componente.next("Inventarios")
-                this.dialog.open( FormularioInventarioComponent);
-                break;
+              this.forms.componente.next("Facturas")
+              this.dialog.open( FormularioFacturaComponent);
+              break;
 
-    case "Pedidoes":
-                  this.forms.object=object
-                     this.forms.componente.next("Pedidoes")
-                    this.dialog.open( FormularioPedidoComponent);
-                    break;
-    case "Personas":
-                      this.forms.object=object
-                         this.forms.componente.next("Personas")
-                        this.dialog.open( FormularioPersonaComponent);
-                        break;
-    case "Platilloes":
-                          this.forms.object=object
-                             this.forms.componente.next("Platilloes")
-                            this.dialog.open( FormularioPlatilloComponent);
-                            break;
-    case "Productoes":
-                          this.forms.object=object
-                             this.forms.componente.next("Productoes")
-                            this.dialog.open( FormularioProductoComponent);
-                            break;
-    case "Proveedors":
-                          this.forms.object=object
-                             this.forms.componente.next("Proveedors")
-                            this.dialog.open( FormularioProveedorComponent);
-                            break;
-    case "Usuarios":
-                          this.forms.object=object
-                             this.forms.componente.next("Usuarios")
-                            this.dialog.open( FormularioUsuarioComponent);
-                            break;
- }
-  }
+        case "Inventarios":
+              this.forms.object=object
+              this.forms.componente.next("Inventarios")
+              this.dialog.open( FormularioInventarioComponent);
+              break;
+
+        case "Pedidoes":
+              this.forms.object=object
+              this.forms.componente.next("Pedidoes")
+              this.dialog.open( FormularioPedidoComponent);
+              break;
+        case "Personas":
+              this.forms.object=object
+              this.forms.componente.next("Personas")
+              this.dialog.open( FormularioPersonaComponent);
+              break;
+        case "Platilloes":
+              this.forms.object=object
+              this.forms.componente.next("Platilloes")
+              this.dialog.open( FormularioPlatilloComponent);
+              break;
+        case "Productoes":
+              this.forms.object=object
+              this.forms.componente.next("Productoes")
+              this.dialog.open( FormularioProductoComponent);
+              break;
+        case "Proveedors":
+              this.forms.object=object
+              this.forms.componente.next("Proveedors")
+              this.dialog.open( FormularioProveedorComponent);
+              break;
+        case "Usuarios":
+              this.forms.object=object
+              this.forms.componente.next("Usuarios")
+              this.dialog.open( FormularioUsuarioComponent);
+              break;
+       }
+    }
 }

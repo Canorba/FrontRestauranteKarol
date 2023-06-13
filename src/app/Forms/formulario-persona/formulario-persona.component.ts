@@ -24,17 +24,14 @@ export class FormularioPersonaComponent implements OnInit{
   ngOnInit(): void {
     this.forms.componente.subscribe((res)=>{
     if (res==="Personas"){
-      this.addressForm.setControl("numDoc",new FormControl (this.forms.object.numDoc))
-      this.addressForm.setControl("nomPersona",new FormControl (this.forms.object.nomPersona))
-      this.addressForm.setControl("apePersona",new FormControl (this.forms.object.apePersona))
-      this.addressForm.setControl("telPersona",new FormControl (this.forms.object.telPersona))
-      this.addressForm.setControl("correoPersona",new FormControl (this.forms.object.correoPersona))
-      this.addressForm.setControl("direccion",new FormControl (this.forms.object.direccion))
-      
-    }
-
-    })
-        
+            this.addressForm.setControl("numDoc",new FormControl (this.forms.object.numDoc))
+            this.addressForm.setControl("nomPersona",new FormControl (this.forms.object.nomPersona))
+            this.addressForm.setControl("apePersona",new FormControl (this.forms.object.apePersona))
+            this.addressForm.setControl("telPersona",new FormControl (this.forms.object.telPersona))
+            this.addressForm.setControl("correoPersona",new FormControl (this.forms.object.correoPersona))
+            this.addressForm.setControl("direccion",new FormControl (this.forms.object.direccion))
+          }
+      })        
   }
   
   onSubmit(): void {
