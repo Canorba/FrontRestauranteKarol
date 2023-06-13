@@ -17,10 +17,11 @@
                   <div class="col">
                     <div class="example-button-container">
 
-                      <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="delete(row.id)">
+                      <!-- <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="('nombreDelControlador', idDelRegistro))">
 
                         <mat-icon>delete</mat-icon>
-                      </button>
+                      </button> -->
+                      <button mat-button color="warn" (click)="eliminarRegistro(row.id)">Eliminar</button>
                   </div>
                   </div>
                   <div class="col">

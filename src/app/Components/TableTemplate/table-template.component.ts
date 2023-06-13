@@ -19,6 +19,8 @@ import { FormularioPlatilloComponent } from 'src/app/Forms/formulario-platillo/f
 import { FormularioProductoComponent } from 'src/app/Forms/formulario-producto/formulario-producto.component';
 import { FormularioProveedorComponent } from 'src/app/Forms/formulario-proveedor/formulario-proveedor.component';
 import { FormularioUsuarioComponent } from 'src/app/Forms/formulario-usuario/formulario-usuario.component';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 
 
@@ -30,14 +32,14 @@ import { FormularioUsuarioComponent } from 'src/app/Forms/formulario-usuario/for
 export class TableTemplateComponent implements OnInit {
   @Input() component:string
   @Input() titulo:string
-  @Input() Componenente: String;
+  @Input() Componenente: string;
   column:Object;
   displayedColumns: string[]=[]
   acciones: any = "Acciones"
   dataSource!: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  constructor(public Api: ApiService, public TableService:TableService, public dialog: MatDialog, public forms:FormsService){
+  constructor(public Api: ApiService, public TableService:TableService, public dialog: MatDialog, public forms:FormsService,private http: HttpClient ){
     this.dataSource=new MatTableDataSource();
   }
 
@@ -68,71 +70,20 @@ export class TableTemplateComponent implements OnInit {
     }
   }
 
+  
+  eliminarRegistro(id: any): void {
 
-  delete(id: any){
-    const swalWithBootstrapButtons = Swal.mixin({
-      customClass: {
-        confirmButton: 'btn btn-success',
-        cancelButton: 'btn btn-danger'
-      },
-      buttonsStyling: false
-    })
-    
-    swalWithBootstrapButtons.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: 'Yes, delete it!',
-      cancelButtonText: 'No, cancel!',
-      reverseButtons: true
-    }).then((result) => {
-      if (result.isConfirmed) {
-        switch (this.component) {
-          case "compras":
-            this.Api.delete("compras",id)
-            break;
-          case "egresos":
-            this.Api.delete("egresos",id)
-            break;
-          case "factura":
-            this.Api.delete("factura",id)
-            break;
-          case "inventario":
-            this.Api.delete("inventario",id)
-            break;
-          case "pedido":
-            this.Api.delete("pedido",id)
-            break;
-          case "persona":
-            this.Api.delete("Personas",id)
-            break;
-          case "platillo":
-            this.Api.delete("platillo",id)
-            break;
-          case "producto":
-            this.Api.delete("producto",id)
-            break;
-          case "proveedor":
-            this.Api.delete("proveedor",id)
-            break; 
-        } 
-        swalWithBootstrapButtons.fire(
-          'Deleted!',
-          'Your file has been deleted.',
-          'success'
-        )
-      } else if (
-        /* Read more about handling dismissals below */
-        result.dismiss === Swal.DismissReason.cancel
-      ) {
-        swalWithBootstrapButtons.fire(
-          'Cancelled',
-          'Your imaginary file is safe :)',
-          'error'
-        )
-      }
-    })
+    this.Api.delete(this.Componenente, id)
+      .subscribe(
+        () => {
+          console.log('Registro eliminado exitosamente.');
+          
+        },
+        error => {
+          console.error('Error al eliminar el registro:', error);
+        
+        }
+      );
   }
   
 
