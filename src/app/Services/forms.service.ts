@@ -7,7 +7,6 @@ import { Injectable } from '@angular/core';
 export class FormsService {
   componente= new BehaviorSubject("");
   object:any
-  
   formularios: any[] = []; 
   constructor() { }
   deleteFormulario(id: string) {

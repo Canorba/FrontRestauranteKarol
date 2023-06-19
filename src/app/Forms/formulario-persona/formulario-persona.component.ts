@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { ApiService } from 'src/app/Services/api.service';
 import { FormsService } from 'src/app/Services/forms.service';
 import Swal from 'sweetalert2';
 
@@ -20,7 +21,7 @@ export class FormularioPersonaComponent implements OnInit{
 
   hasUnitNumber = false;
 
-  constructor(private fb: FormBuilder,public forms: FormsService) {}
+  constructor(private fb: FormBuilder,public forms: FormsService , public Api:ApiService) {}
   ngOnInit(): void {
     this.forms.componente.subscribe((res)=>{
     if (res==="Personas"){
@@ -36,12 +37,37 @@ export class FormularioPersonaComponent implements OnInit{
     })
         
   }
-  
-  onSubmit(): void {
-    Swal.fire(
-      'Buen trabajo!',
-      'Cambios Guardado!',
-      'success'
-    )
+
+  async onSubmit(): Promise<void> {
+
+    const id = this.forms.object.id;
+
+   
+    try {
+      await this.Api.put('Personas', this.addressForm.value,id);
+      console.log('Datos guardados exitosamente.');
+      Swal.fire({
+        icon: 'success',
+        title: 'Éxito',
+        text: 'Los cambios se han guardado exitosamente.',
+        confirmButtonText: 'Aceptar'
+      });
+    } catch (error) {
+      console.error('Error al guardar los datos:', error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Se produjo un error al guardar los cambios.',
+        confirmButtonText: 'Aceptar'
+      });
+    }
   }
 }
+  
+  // onSubmit(): void {
+  //   Swal.fire(
+  //     'Buen trabajo!',
+  //     'Cambios Guardado!',
+  //     'success'
+  //   )
+  // }

@@ -85,6 +85,8 @@ export class TableTemplateComponent implements OnInit {
         }
       );
   }
+
+ 
   
 
   edit(object:any){
